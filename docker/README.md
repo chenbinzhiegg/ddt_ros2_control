@@ -1,17 +1,25 @@
+<!--
+ * @Author: blank1 448913821@qq.com
+ * @Date: 2026-01-05 16:37:34
+ * @LastEditors: blank1 448913821@qq.com
+ * @LastEditTime: 2026-02-06 16:10:00
+ * @FilePath: \ddt_ros2_control\docker\README.md
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 ## DDT_TiTa_ros2_docker
 This repository is based on [ddt_ros2_control](https://github.com/DDTRobot/ddt_ros2_control), please read the file firstly.
 ### Download the docker
 ```
-docker pull registry.cn-hangzhou.aliyuncs.com/ddt_robot/run_ddt_tita:latest
+docker pull registry.cn-hangzhou.aliyuncs.com/ddt_robot/run_ddt_tita:v1.0
 ```
 
 ### A refer to start the docker
 
 ```
-sudo docker run -v path/above/your/project:/mnt/dev -w /mnt/dev --rm  --gpus all --net=host --privileged -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1  -e CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda -it registry.cn-hangzhou.aliyuncs.com/ddt_robot/run_ddt_tita:latest
+sudo docker run -v path/above/your/project:/mnt/dev -w /mnt/dev --rm  --gpus all --net=host --privileged -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1  -e CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda -it registry.cn-hangzhou.aliyuncs.com/ddt_robot/run_ddt_tita:v1.0
 
 # For example: Dowloads is the directory above the project tita_rl_sim2sim2real
-sudo docker run -v ~/Downloads:/mnt/dev -w /mnt/dev --rm  --gpus all --net=host --privileged -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1  -e CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda -it registry.cn-hangzhou.aliyuncs.com/ddt_robot/run_ddt_tita:latest
+sudo docker run -v ~/Downloads:/mnt/dev -w /mnt/dev --rm  --gpus all --net=host --privileged -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1  -e CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda -it registry.cn-hangzhou.aliyuncs.com/ddt_robot/run_ddt_tita:v1.0
 
 ```
 ### Try starting the webots，and shall see the webots GUI:
