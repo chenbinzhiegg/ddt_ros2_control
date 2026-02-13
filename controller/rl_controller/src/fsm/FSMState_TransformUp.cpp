@@ -169,12 +169,16 @@ void FSMState_TransformUp::_StandUp(const int & curr_iter)
     _SetJPosInterPts(curr_iter, standup_ramp_iter, initial_jpos, stand_jpos);
   _data->low_cmd->qd = inter_jpos;
   _data->low_cmd->qd_dot.setZero();
-  _data->low_cmd->kp.setZero();
-  _data->low_cmd->kd.setZero();
-  _data->low_cmd->tau_cmd = kp_joint.cwiseProduct(inter_jpos - _data->low_state->q) +
-                            kd_joint.cwiseProduct(-_data->low_state->dq) + f_ff;
+  _data->low_cmd->kp = kp_joint;
+  _data->low_cmd->kd = kd_joint;
+  _data->low_cmd->tau_cmd = f_ff;
+
   for (auto index : _data->params->wheel_indices) {
-    _data->low_cmd->tau_cmd(index) = kd_joint(index) * -_data->low_state->dq(index);
+    _data->low_cmd->qd(index) = 0.0;
+    _data->low_cmd->qd_dot(index) = 0.0;
+    _data->low_cmd->kp(index) = 0.0;
+    _data->low_cmd->kd(index) = kd_joint(index);
+    _data->low_cmd->tau_cmd(index) = 0.0;
   }
 }
 
@@ -186,12 +190,16 @@ void FSMState_TransformUp::_FoldLegs(const int & curr_iter)
   DVec<scalar_t> inter_jpos = _SetJPosInterPts(curr_iter, fold_ramp_iter, initial_jpos, fold_jpos);
   _data->low_cmd->qd = inter_jpos;
   _data->low_cmd->qd_dot.setZero();
-  _data->low_cmd->kp.setZero();
-  _data->low_cmd->kd.setZero();
-  _data->low_cmd->tau_cmd = kp_joint.cwiseProduct(inter_jpos - _data->low_state->q) +
-                            kd_joint.cwiseProduct(-_data->low_state->dq) + f_ff;
+  _data->low_cmd->kp = kp_joint;
+  _data->low_cmd->kd = kd_joint;
+  _data->low_cmd->tau_cmd = f_ff;
+
   for (auto index : _data->params->wheel_indices) {
-    _data->low_cmd->tau_cmd(index) = kd_joint(index) * -_data->low_state->dq(index);
+    _data->low_cmd->qd(index) = 0.0;
+    _data->low_cmd->qd_dot(index) = 0.0;
+    _data->low_cmd->kp(index) = 0.0;
+    _data->low_cmd->kd(index) = kd_joint(index);
+    _data->low_cmd->tau_cmd(index) = 0.0;
   }
 
   if (curr_iter >= fold_ramp_iter) {
