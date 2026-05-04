@@ -57,7 +57,7 @@ cd ~/ddt_ros2_ws
 # 编译rl_controller
 colcon build --symlink-install --packages-up-to rl_controller 
 # 编译仿真环境
-colcon build --symlink-install --packages-up-to webots_bridge # 可替换为gazebo_bridge， mujoco_bridge
+colcon build --symlink-install --packages-up-to webot_bridge # 可替换为gazebo_bridge， mujoco_bridge
 # 编译机器人模型描述
 colcon build --symlink-install --packages-up-to d1_description d1h_description
 # 编译硬件桥接
@@ -65,6 +65,13 @@ colcon build --symlink-install --packages-up-to hardware_bridge
 # 载入环境
 source install/setup.bash
 ```
+
+
+# 先加载ROS2基础环境(通用命令)
+source /opt/ros/humble/setup.bash 
+# 再加载你的工作空间环境
+source install/setup.bash
+
 
 ## 仿真运行
 - Webots 仿真（地形可选 `empty_world`、`stairs`、`uneven`）：

@@ -21,6 +21,8 @@ sudo docker run -v path/above/your/project:/mnt/dev -w /mnt/dev --rm  --gpus all
 # For example: Dowloads is the directory above the project tita_rl_sim2sim2real
 sudo docker run -v ~/Downloads:/mnt/dev -w /mnt/dev --rm  --gpus all --net=host --privileged -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1  -e CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda -it registry.cn-hangzhou.aliyuncs.com/ddt_robot/run_ddt_tita:v1.0
 
+#sudo docker run -v /home/chenzhibin:/mnt/dev -w /mnt/dev/ddt_ros2_ws --rm --gpus all --net=host --privileged -e DISPLAY=$DISPLAY -it registry.cn-hangzhou.aliyuncs.com/ddt_robot/run_ddt_tita:v1.0
+
 ```
 ### Try starting the webots，and shall see the webots GUI:
 ```
