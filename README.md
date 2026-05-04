@@ -57,7 +57,6 @@ cd ~/ddt_ros2_ws
 # 编译rl_controller
 colcon build --symlink-install --packages-up-to rl_controller 
 # 编译仿真环境
-colcon build --symlink-install --packages-up-to webot_bridge # 可替换为gazebo_bridge， mujoco_bridge
 # 编译机器人模型描述
 colcon build --symlink-install --packages-up-to d1_description d1h_description
 # 编译硬件桥接
