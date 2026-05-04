@@ -67,9 +67,9 @@ source install/setup.bash
 ```
 
 
-# 先加载ROS2基础环境(通用命令)
+## 先加载ROS2基础环境(通用命令)
 source /opt/ros/humble/setup.bash 
-# 再加载你的工作空间环境
+## 再加载你的工作空间环境
 source install/setup.bash
 
 ## 仿真运行
