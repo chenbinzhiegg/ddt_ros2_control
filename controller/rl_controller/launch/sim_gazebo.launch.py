@@ -68,7 +68,7 @@ def launch_setup(context, *args, **kwargs):
     ).toxml()
 
     # Replace package:// URIs for all *_description packages
-    description_packages = ["d1_description", "d1h_description", "tita_description", "titatit_description"]
+    description_packages = ["d1_description", "d1h_description", "tita_description", "tita_description"]
     for desc_pkg in description_packages:
         robot_description = robot_description.replace(
             "package://" + desc_pkg,
