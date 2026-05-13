@@ -71,7 +71,6 @@ source install/setup.bash
 source /opt/ros/humble/setup.bash 
 ## 再加载你的工作空间环境
 source install/setup.bash
-（本条无关，是我测试我的电脑）
 
 
 ## 仿真运行
